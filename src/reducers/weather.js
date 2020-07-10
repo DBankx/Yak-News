@@ -17,6 +17,7 @@ const weather = (state = initialState, action) => {
         ...state,
         lon: payload.lon,
         lat: payload.lat,
+        weatherData: payload.weatherInfo,
         loading: false
       };
     case WEATHER_ERROR:
