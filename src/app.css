@@ -50,5 +50,52 @@ body {
 }
 
 .container {
-  padding: 0 3rem;
+  padding: 0 8rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .navbar .nav ul {
+    display: none;
+  }
+  .navbar .nav {
+    justify-content: center;
+  }
+  .navbar {
+    background-color: #fff;
+  }
+}
+
+.util-bar {
+  margin-top: 1em;
+  height: 5rem;
+}
+
+.util-bar ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.util-bar form button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.util-bar form button:hover {
+  background: none;
+}
+
+.util-bar form input {
+  border-radius: 30px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #dddddd;
+  padding-left: 1rem;
 }
