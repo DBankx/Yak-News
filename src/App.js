@@ -4,7 +4,7 @@ import store from './store';
 import Navbar from './components/layout/Navbar';
 import './app.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import UtilityBar from './components/layout/UtilityBar';
+import Landing from './components/home/Landing';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={UtilityBar} />
+          <Route exact path='/' component={Landing} />
         </Switch>
       </Router>
     </Provider>

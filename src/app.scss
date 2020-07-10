@@ -71,6 +71,10 @@ body {
   .navbar {
     background-color: #fff;
   }
+
+  .hide-sm {
+    display: none;
+  }
 }
 
 // styling the utility bar`
@@ -113,4 +117,49 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// styling the landing page
+.tab-list {
+  margin-top: 2em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.tab-list li {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  outline: none;
+}
+
+.tab-list li:before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: $main-color;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.tab-list li:hover,
+.tab-list li.active {
+  margin-bottom: 1em;
+  transition: 400ms;
+}
+
+.tab-list li:hover::before,
+.tab-list li.active:before {
+  opacity: 1;
 }
