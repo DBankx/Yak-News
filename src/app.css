@@ -109,6 +109,34 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .util-bar ul {
+    display: block;
+    text-align: center;
+  }
+  .util-bar ul li {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .hide-md {
+    display: none;
+  }
+  .container {
+    padding: 0 2em;
+  }
+}
+
+@media (max-width: 1066px) and (min-width: 900px) {
+  .hide-lg {
+    display: none;
+  }
+  .container {
+    padding: 0 2em;
+  }
+}
+
 .tab-list {
   margin-top: 2em;
   list-style: none;

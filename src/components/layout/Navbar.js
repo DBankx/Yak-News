@@ -5,16 +5,6 @@ import InfoIcon from '@material-ui/icons/Info';
 import CallIcon from '@material-ui/icons/Call';
 
 const Navbar = () => {
-  //   window.navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       const { latitude, longitude } = position.coords;
-  //       console.log(latitude, longitude);
-  //     },
-  //     (err) => {
-  //       console.log(err);
-  //     }
-  //   );
-
   return (
     <div className='navbar'>
       <div className='container'>

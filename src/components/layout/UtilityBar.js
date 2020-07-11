@@ -28,7 +28,7 @@ const UtilityBar = ({ weather, getWeather }) => {
       <div className='container'>
         <ul>
           <li>{today}</li>
-          <li className='weather-display'>
+          <li className='weather-display hide-sm'>
             {weather &&
             weather.weatherData !== null &&
             weather.error === null &&

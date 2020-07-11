@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UtilityBar from '../layout/UtilityBar';
-// import 'react-tabs/style/react-tabs.css';
 
 const Landing = (props) => {
   return (
@@ -15,7 +14,9 @@ const Landing = (props) => {
             <TabList className='tab-list'>
               <Tab selectedClassName='active'>World</Tab>
               <Tab selectedClassName='active'>Tech</Tab>
-              <Tab selectedClassName='active'>U.S</Tab>
+              <Tab selectedClassName='active' className='hide-sm'>
+                U.S
+              </Tab>
               <Tab selectedClassName='active'>Politics</Tab>
               <Tab selectedClassName='active'>Busniess</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
@@ -24,16 +25,16 @@ const Landing = (props) => {
               <Tab selectedClassName='active' className='hide-sm'>
                 Sports
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Art
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Books
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Science
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Travel
               </Tab>
               <Tab selectedClassName='active' className='hide-sm'>
