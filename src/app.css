@@ -190,7 +190,8 @@ body {
 .carousel-news {
   display: flex;
   padding: 0 2em 2em 2em;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .carousel-slider a {
@@ -215,12 +216,44 @@ body {
   padding: 0 4px;
 }
 
+.carousel-body {
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+}
+
+.trig-button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #000;
+}
+
+.dot-group {
+  text-align: center;
+}
+
+.carousel-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media (max-width: 900px) and (min-width: 600px) {
+  .carousel-news {
+    align-items: initial;
+  }
   .carousel-news h1 {
     font-size: 1.3em;
   }
   .carousel-news img {
     width: 50%;
     height: 250px;
+  }
+}
+
+@media (max-width: 1066px) and (min-width: 900px) {
+  .carousel-news {
+    align-items: initial;
   }
 }
