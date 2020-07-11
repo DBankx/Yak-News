@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../imgs/logo.svg';
 import { Link } from 'react-router-dom';
 import InfoIcon from '@material-ui/icons/Info';

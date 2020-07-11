@@ -1,7 +1,15 @@
 import axios from 'axios';
-import { GET_CAROUSEL_NEWS, CAROUSEL_ERROR } from './actions';
+import {
+  GET_CAROUSEL_WORLD_NEWS,
+  GET_CAROUSEL_TRENDING_NEWS,
+  CAROUSEL_ERROR
+} from './actions';
 
-export const getCarouselData = () => async (dispatch) => {
+// get the carousel data for the world tab
+
+const NEWS_API_KEY = process.env.REACT_APP_NEWS_API;
+
+export const getCarouselWorld = () => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -11,10 +19,10 @@ export const getCarouselData = () => async (dispatch) => {
         useQueryString: true
       },
       params: {
-        autoCorrect: 'false',
+        autoCorrect: 'true',
         pageNumber: '1',
         pageSize: '10',
-        q: 'today',
+        q: 'world news',
         safeSearch: 'false'
       }
     };
@@ -25,7 +33,25 @@ export const getCarouselData = () => async (dispatch) => {
     );
 
     dispatch({
-      type: GET_CAROUSEL_NEWS,
+      type: GET_CAROUSEL_WORLD_NEWS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: CAROUSEL_ERROR,
+      payload: err.response.data
+    });
+  }
+};
+
+export const getCarouselTrending = () => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${NEWS_API_KEY}`
+    );
+
+    dispatch({
+      type: GET_CAROUSEL_TRENDING_NEWS,
       payload: res.data
     });
   } catch (err) {

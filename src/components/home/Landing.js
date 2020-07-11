@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UtilityBar from '../layout/UtilityBar';
+import World from '../tabviews/World';
+import Trending from '../tabviews/Trending';
 
 const Landing = (props) => {
   return (
@@ -12,12 +13,15 @@ const Landing = (props) => {
         <div className='tab-area'>
           <Tabs>
             <TabList className='tab-list'>
+              <Tab selectedClassName='active'>Trending</Tab>
               <Tab selectedClassName='active'>World</Tab>
               <Tab selectedClassName='active'>Tech</Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 U.S
               </Tab>
-              <Tab selectedClassName='active'>Politics</Tab>
+              <Tab selectedClassName='active' className='hide-sm'>
+                Politics
+              </Tab>
               <Tab selectedClassName='active'>Busniess</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
                 Health
@@ -29,21 +33,27 @@ const Landing = (props) => {
                 Art
               </Tab>
               <Tab selectedClassName='active' className='hide-sm hide-md'>
-                Books
+                Fashion
               </Tab>
               <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Science
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm hide-md'>
+              <Tab
+                selectedClassName='active'
+                className='hide-sm hide-md hide-lg'
+              >
                 Travel
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab
+                selectedClassName='active'
+                className='hide-sm hide-md hide-lg'
+              >
                 Food
               </Tab>
             </TabList>
 
             <TabPanel>
-              <h2>Any content 1</h2>
+              <Trending />
             </TabPanel>
             <TabPanel>
               <h2>Any content 2</h2>
@@ -57,7 +67,5 @@ const Landing = (props) => {
     </div>
   );
 };
-
-Landing.propTypes = {};
 
 export default connect(null)(Landing);
