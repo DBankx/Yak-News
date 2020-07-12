@@ -2,7 +2,7 @@ import {
   GET_CAROUSEL_WORLD_NEWS,
   GET_CAROUSEL_TECH_NEWS,
   GET_CAROUSEL_POLITICS_NEWS,
-  GET_CAROUSEL_US_NEWS,
+  GET_CAROUSEL_COUNTRY_NEWS,
   GET_CAROUSEL_SCIENCE_NEWS,
   GET_CAROUSEL_TRAVEL_NEWS,
   GET_CAROUSEL_SPORT_NEWS,
@@ -27,7 +27,7 @@ const initialState = {
   food: null,
   health: null,
   tech: null,
-  us: null,
+  country: null,
   errors: []
 };
 
@@ -46,10 +46,10 @@ const carousel = (state = initialState, actions) => {
         tech: payload,
         loading: false
       };
-    case GET_CAROUSEL_US_NEWS:
+    case GET_CAROUSEL_COUNTRY_NEWS:
       return {
         ...state,
-        us: payload,
+        country: payload,
         loading: false
       };
     case GET_CAROUSEL_SPORT_NEWS:
