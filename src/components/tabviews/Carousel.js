@@ -21,7 +21,7 @@ const Carousel = ({ data }) => {
   return (
     <CarouselProvider
       naturalSlideWidth={80}
-      naturalSlideHeight={isTablet ? 40 : 25}
+      naturalSlideHeight={isTablet ? 40 : 30}
       interval={4000}
       isPlaying={true}
       infinite={true}
@@ -42,23 +42,39 @@ const Carousel = ({ data }) => {
                   <a href={news.url} target='_blank' rel='noopener noreferrer'>
                     <div className='carousel-news'>
                       {/* @@@todo - display image of headline */}
-                      <img src={news.multimedia[0].url} alt='headline' />
+                      {news.multimedia ? (
+                        <img src={news.multimedia[0].url} alt='headline' />
+                      ) : news.urlToImage ? (
+                        <img src={news.urlToImage} alt='headline' />
+                      ) : null}
                       <div className='news-body'>
                         <h1>{news.title}</h1>
-                        <p className='abstract'>{news.abstract}</p>
-                        <p className='byline'>{news.byline}</p>
+                        <p className='abstract'>
+                          {news.abstract ? news.abstract : news.description}
+                        </p>
+                        <p className='byline'>
+                          {news.byline ? news.byline : news.author}
+                        </p>
                         <ul>
                           <li>
                             <QueryBuilderIcon />
                           </li>
                           <li>
                             <strong>
-                              <Moment fromNow>{news.published_date}</Moment>
+                              <Moment fromNow>
+                                {news.published_date
+                                  ? news.published_date
+                                  : news.publishedAt}
+                              </Moment>
                             </strong>
                           </li>
                           <li>•</li>
                           <li>
-                            {news.subsection ? news.subsection : news.section}
+                            {news.subsection
+                              ? news.subsection
+                              : news.section
+                              ? news.section
+                              : news.source.name}
                           </li>
                         </ul>
                       </div>

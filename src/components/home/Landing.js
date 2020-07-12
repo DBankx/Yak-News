@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UtilityBar from '../layout/UtilityBar';
 import World from '../tabviews/World';
 import Tech from '../tabviews/Tech';
-import Us from '../tabviews/Us';
+import Country from '../tabviews/Country';
 import Politics from '../tabviews/Politics';
 import Busniess from '../tabviews/Busniess';
 import Health from '../tabviews/Health';
@@ -15,7 +15,7 @@ import Science from '../tabviews/Science';
 import Travel from '../tabviews/Travel';
 import Food from '../tabviews/Food';
 
-const Landing = (props) => {
+const Landing = ({ weather: { weatherData, loading } }) => {
   return (
     <div className='landing-page'>
       <UtilityBar />
@@ -26,7 +26,10 @@ const Landing = (props) => {
               <Tab selectedClassName='active'>World</Tab>
               <Tab selectedClassName='active'>Tech</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
-                U.S
+                {/* check for the country the user is in and display the data on the screen */}
+                {weatherData && loading !== true
+                  ? weatherData.sys.country
+                  : 'U.S'}
               </Tab>
               <Tab selectedClassName='active' className='hide-sm'>
                 Politics
@@ -68,7 +71,7 @@ const Landing = (props) => {
               <Tech />
             </TabPanel>
             <TabPanel>
-              <Us />
+              <Country />
             </TabPanel>
             <TabPanel>
               <Politics />
@@ -104,4 +107,8 @@ const Landing = (props) => {
   );
 };
 
-export default connect(null)(Landing);
+const mapState = (state) => ({
+  weather: state.weather
+});
+
+export default connect(mapState)(Landing);
