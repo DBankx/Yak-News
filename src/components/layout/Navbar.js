@@ -1,20 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../imgs/logo.svg';
 import { Link } from 'react-router-dom';
 import InfoIcon from '@material-ui/icons/Info';
 import CallIcon from '@material-ui/icons/Call';
 
 const Navbar = () => {
-  //   window.navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       const { latitude, longitude } = position.coords;
-  //       console.log(latitude, longitude);
-  //     },
-  //     (err) => {
-  //       console.log(err);
-  //     }
-  //   );
-
   return (
     <div className='navbar'>
       <div className='container'>

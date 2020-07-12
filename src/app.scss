@@ -119,6 +119,39 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .util-bar ul {
+    display: block;
+    text-align: center;
+
+    & li {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// tablet devices
+@media (max-width: 900px) and (min-width: 600px) {
+  .hide-md {
+    display: none;
+  }
+
+  .container {
+    padding: 0 2em;
+  }
+}
+
+// big tablets
+@media (max-width: 1066px) and (min-width: 900px) {
+  .hide-lg {
+    display: none;
+  }
+
+  .container {
+    padding: 0 2em;
+  }
+}
+
 // styling the landing page
 .tab-list {
   margin-top: 2em;
@@ -162,4 +195,83 @@ body {
 .tab-list li:hover::before,
 .tab-list li.active:before {
   opacity: 1;
+}
+
+// styling the carousel
+
+.carousel-news img {
+  width: 50%;
+  height: 100%;
+  margin-right: 1em;
+}
+
+.carousel-news {
+  display: flex;
+  padding: 0 2em 2em 2em;
+  justify-content: space-between;
+  align-items: initial;
+}
+
+.carousel-slider a {
+  color: #000;
+  text-decoration: none;
+}
+
+.news-body {
+  .byline {
+    margin-top: 1em;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+}
+
+.news-body ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 1em;
+
+  li {
+    padding: 0 4px;
+  }
+}
+
+.carousel-body {
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+}
+
+.trig-button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #000;
+}
+
+.carousel-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .carousel-news {
+    align-items: initial;
+    margin: auto;
+    h1 {
+      font-size: 1.3em;
+    }
+
+    img {
+      width: 50%;
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 1066px) and (min-width: 900px) {
+  .carousel-news {
+    align-items: initial;
+  }
 }

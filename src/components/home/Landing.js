@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UtilityBar from '../layout/UtilityBar';
-// import 'react-tabs/style/react-tabs.css';
+import World from '../tabviews/World';
+import Tech from '../tabviews/Tech';
+import Us from '../tabviews/Us';
+import Politics from '../tabviews/Politics';
+import Busniess from '../tabviews/Busniess';
+import Health from '../tabviews/Health';
+import Sports from '../tabviews/Sports';
+import Art from '../tabviews/Art';
+import Fashion from '../tabviews/Fashion';
+import Science from '../tabviews/Science';
+import Travel from '../tabviews/Travel';
+import Food from '../tabviews/Food';
 
 const Landing = (props) => {
   return (
@@ -15,8 +25,12 @@ const Landing = (props) => {
             <TabList className='tab-list'>
               <Tab selectedClassName='active'>World</Tab>
               <Tab selectedClassName='active'>Tech</Tab>
-              <Tab selectedClassName='active'>U.S</Tab>
-              <Tab selectedClassName='active'>Politics</Tab>
+              <Tab selectedClassName='active' className='hide-sm'>
+                U.S
+              </Tab>
+              <Tab selectedClassName='active' className='hide-sm'>
+                Politics
+              </Tab>
               <Tab selectedClassName='active'>Busniess</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
                 Health
@@ -24,31 +38,64 @@ const Landing = (props) => {
               <Tab selectedClassName='active' className='hide-sm'>
                 Sports
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Art
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
-                Books
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
+                Fashion
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab selectedClassName='active' className='hide-sm hide-md'>
                 Science
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab
+                selectedClassName='active'
+                className='hide-sm hide-md hide-lg'
+              >
                 Travel
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
+              <Tab
+                selectedClassName='active'
+                className='hide-sm hide-md hide-lg'
+              >
                 Food
               </Tab>
             </TabList>
 
             <TabPanel>
-              <h2>Any content 1</h2>
+              <World />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <Tech />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 3</h2>
+              <Us />
+            </TabPanel>
+            <TabPanel>
+              <Politics />
+            </TabPanel>
+            <TabPanel>
+              <Busniess />
+            </TabPanel>
+            <TabPanel>
+              <Health />
+            </TabPanel>
+            <TabPanel>
+              <Sports />
+            </TabPanel>
+            <TabPanel>
+              <Art />
+            </TabPanel>
+            <TabPanel>
+              <Fashion />
+            </TabPanel>
+            <TabPanel>
+              <Science />
+            </TabPanel>
+            <TabPanel>
+              <Travel />
+            </TabPanel>
+            <TabPanel>
+              <Food />
             </TabPanel>
           </Tabs>
         </div>
@@ -56,7 +103,5 @@ const Landing = (props) => {
     </div>
   );
 };
-
-Landing.propTypes = {};
 
 export default connect(null)(Landing);
