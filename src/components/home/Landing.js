@@ -3,7 +3,17 @@ import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UtilityBar from '../layout/UtilityBar';
 import World from '../tabviews/World';
-import Trending from '../tabviews/Trending';
+import Tech from '../tabviews/Tech';
+import Us from '../tabviews/Us';
+import Politics from '../tabviews/Politics';
+import Busniess from '../tabviews/Busniess';
+import Health from '../tabviews/Health';
+import Sports from '../tabviews/Sports';
+import Art from '../tabviews/Art';
+import Fashion from '../tabviews/Fashion';
+import Science from '../tabviews/Science';
+import Travel from '../tabviews/Travel';
+import Food from '../tabviews/Food';
 
 const Landing = (props) => {
   return (
@@ -13,10 +23,9 @@ const Landing = (props) => {
         <div className='tab-area'>
           <Tabs>
             <TabList className='tab-list'>
-              <Tab selectedClassName='active'>Trending</Tab>
               <Tab selectedClassName='active'>World</Tab>
               <Tab selectedClassName='active'>Tech</Tab>
-              <Tab selectedClassName='active' className='hide-sm hide-md'>
+              <Tab selectedClassName='active' className='hide-sm'>
                 U.S
               </Tab>
               <Tab selectedClassName='active' className='hide-sm'>
@@ -53,13 +62,40 @@ const Landing = (props) => {
             </TabList>
 
             <TabPanel>
-              <Trending />
+              <World />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <Tech />
             </TabPanel>
             <TabPanel>
-              <h2>Any content 3</h2>
+              <Us />
+            </TabPanel>
+            <TabPanel>
+              <Politics />
+            </TabPanel>
+            <TabPanel>
+              <Busniess />
+            </TabPanel>
+            <TabPanel>
+              <Health />
+            </TabPanel>
+            <TabPanel>
+              <Sports />
+            </TabPanel>
+            <TabPanel>
+              <Art />
+            </TabPanel>
+            <TabPanel>
+              <Fashion />
+            </TabPanel>
+            <TabPanel>
+              <Science />
+            </TabPanel>
+            <TabPanel>
+              <Travel />
+            </TabPanel>
+            <TabPanel>
+              <Food />
             </TabPanel>
           </Tabs>
         </div>

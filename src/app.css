@@ -191,7 +191,7 @@ body {
   display: flex;
   padding: 0 2em 2em 2em;
   justify-content: space-between;
-  align-items: center;
+  align-items: initial;
 }
 
 .carousel-slider a {
@@ -212,7 +212,7 @@ body {
   margin-top: 1em;
 }
 
-.news-body ul li:last-child {
+.news-body ul li {
   padding: 0 4px;
 }
 
@@ -228,10 +228,6 @@ body {
   color: #000;
 }
 
-.dot-group {
-  text-align: center;
-}
-
 .carousel-spinner {
   position: absolute;
   top: 50%;
@@ -242,6 +238,7 @@ body {
 @media (max-width: 900px) and (min-width: 600px) {
   .carousel-news {
     align-items: initial;
+    margin: auto;
   }
   .carousel-news h1 {
     font-size: 1.3em;

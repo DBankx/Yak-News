@@ -5,27 +5,28 @@ import {
   Slider,
   Slide,
   ButtonBack,
-  ButtonNext,
-  Image,
-  DotGroup
+  ButtonNext
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import Moment from 'react-moment';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
-import Spinner from '../layout/Spinner';
+import { v4 as uuidv4 } from 'uuid';
 
 const Carousel = ({ data }) => {
-  const mainData = data && data;
+  // splice the data to get the carousel data
+  const carouselData = data && data.splice(0, 10);
 
   return (
     <CarouselProvider
       naturalSlideWidth={80}
       naturalSlideHeight={isTablet ? 40 : 25}
       interval={4000}
-      //   gets the length of the data array
-      totalSlides={data && mainData.length}
+      isPlaying={true}
+      infinite={true}
+      //   gets the length of the carousel data array
+      totalSlides={data && carouselData.length}
       className='hide-sm'
     >
       <div className='carousel-body'>
@@ -34,17 +35,14 @@ const Carousel = ({ data }) => {
         </ButtonBack>
         {/* map through the data and render it in the ui */}
         <Slider className='carousel-slider'>
-          {data ? (
-            mainData.map((news, index) => {
+          {data &&
+            carouselData.map((news, index) => {
               return (
-                <Slide key={news.id} index={index}>
+                <Slide key={uuidv4()} index={index}>
                   <a href={news.url} target='_blank' rel='noopener noreferrer'>
                     <div className='carousel-news'>
-                      <Image
-                        src={news.media[0]['media-metadata'][2].url}
-                        alt='headline'
-                        hasMasterSpinner={true}
-                      />
+                      {/* @@@todo - display image of headline */}
+                      <img src={news.multimedia[0].url} alt='headline' />
                       <div className='news-body'>
                         <h1>{news.title}</h1>
                         <p className='abstract'>{news.abstract}</p>
@@ -55,8 +53,12 @@ const Carousel = ({ data }) => {
                           </li>
                           <li>
                             <strong>
-                              <Moment fromNow>{news.updated}</Moment>
+                              <Moment fromNow>{news.published_date}</Moment>
                             </strong>
+                          </li>
+                          <li>•</li>
+                          <li>
+                            {news.subsection ? news.subsection : news.section}
                           </li>
                         </ul>
                       </div>
@@ -64,17 +66,13 @@ const Carousel = ({ data }) => {
                   </a>
                 </Slide>
               );
-            })
-          ) : (
-            <Spinner className='carousel-spinner' />
-          )}
+            })}
         </Slider>
 
         <ButtonNext className='trig-button'>
           <KeyboardArrowRightIcon />
         </ButtonNext>
       </div>
-      <DotGroup className='dot-group' />
     </CarouselProvider>
   );
 };

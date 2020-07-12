@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Carousel from './Carousel';
 import { getCarouselWorld } from '../../actions/carousel';
+import Spinner from '../layout/Spinner';
 
-const World = ({ getCarouselWorld, carousel: { world } }) => {
+const World = ({ getCarouselWorld, carousel: { world, loading } }) => {
   useEffect(() => {
     getCarouselWorld();
   }, [getCarouselWorld]);
 
   return (
     <div>
-      <Carousel data={world && world.value} />
+      {world ? (
+        <Carousel data={world && loading !== true && world.results} />
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
