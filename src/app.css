@@ -9,6 +9,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -252,5 +253,85 @@ body {
 @media (max-width: 1066px) and (min-width: 900px) {
   .carousel-news {
     align-items: initial;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  grid-auto-rows: auto;
+}
+
+.trigger-buttons {
+  margin: 1em auto;
+}
+
+.trigger-buttons ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+}
+
+.trigger-buttons ul li {
+  padding: 0 10px;
+}
+
+.trigger-buttons button {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.trigger-buttons button:hover {
+  background: none;
+  color: #0e6cff;
+  transition: 600ms ease;
+}
+
+.news-card {
+  margin-top: 2em;
+}
+
+.news-card img {
+  width: 100%;
+}
+
+.news-card a {
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1em;
+}
+
+.news-card ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.news-card ul li:first-child {
+  padding: 0;
+}
+
+.news-card ul li {
+  padding: 0 10px;
+}
+
+.news-link {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr;
   }
 }

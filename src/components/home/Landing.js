@@ -31,9 +31,7 @@ const Landing = ({ weather: { weatherData, loading } }) => {
                   ? weatherData.sys.country
                   : 'U.S'}
               </Tab>
-              <Tab selectedClassName='active' className='hide-sm'>
-                Politics
-              </Tab>
+              <Tab selectedClassName='active'>Politics</Tab>
               <Tab selectedClassName='active'>Busniess</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
                 Health

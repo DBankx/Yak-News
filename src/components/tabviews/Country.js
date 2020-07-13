@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Carousel from './Carousel';
 import { getCarouselCountry } from '../../actions/carousel';
+import { getNews } from '../../actions/news';
 import Spinner from '../layout/Spinner';
+import { isoCountry } from 'iso-country';
 
 const Country = ({
   getCarouselCountry,
+  getNews,
   carousel: { country, loading },
   weather: { weatherData }
 }) => {
   // get the country code from the data and use it to get the country news
   useEffect(() => {
     getCarouselCountry(weatherData ? weatherData.sys.country : 'us');
-  }, [getCarouselCountry, weatherData]);
+    // get the news from the news api from the countrys name
+    getNews(isoCountry(weatherData ? weatherData.sys.country : 'US').name);
+  }, [getCarouselCountry, weatherData, getNews]);
 
   return (
     <div>
@@ -36,4 +41,4 @@ const mapState = (state) => ({
   weather: state.weather
 });
 
-export default connect(mapState, { getCarouselCountry })(Country);
+export default connect(mapState, { getCarouselCountry, getNews })(Country);
