@@ -95,13 +95,22 @@ body {
 
 .util-bar form {
   button {
-    background: none;
     border: none;
+    background: none;
     box-shadow: none;
-    outline: none;
 
     &:hover {
+      box-shadow: none;
+      color: $main-color;
       background: none;
+    }
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: $main-color;
     }
   }
 
@@ -111,6 +120,7 @@ body {
     outline: none;
     border: 1px solid #dddddd;
     padding-left: 1rem;
+    margin-right: 1em;
   }
 }
 
@@ -374,5 +384,93 @@ body {
   hr {
     width: 90%;
     background-color: #000;
+  }
+}
+
+.footer-body ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+
+  li:first-child {
+    padding-right: 10px;
+    padding-left: 0;
+  }
+
+  li {
+    padding: 0 10px;
+  }
+}
+
+.footer-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-body-text {
+  display: flex;
+  align-items: center;
+
+  a {
+    padding: 0 10px;
+    text-decoration: none;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.last-text {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 2em;
+}
+
+@media (max-width: 600px) {
+  .footer-body {
+    display: block;
+  }
+
+  .footer-title {
+    h3 {
+      width: 60%;
+    }
+  }
+
+  .footer-body ul {
+    margin: 1em auto;
+  }
+
+  .footer-body-text {
+    display: block;
+
+    a {
+      display: block;
+      padding: 0;
+      margin-top: 1em;
+    }
+  }
+}
+
+.result-box {
+  border-radius: 30px;
+  box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  padding: 2em;
+  border-bottom: none;
+  border-top: none;
+  left: 0;
+  right: 0;
+}
+
+.suggestion-box {
+  padding: 1em 0;
+  a {
+    text-decoration: none;
+    color: #000;
   }
 }

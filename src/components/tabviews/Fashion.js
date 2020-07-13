@@ -43,7 +43,7 @@ const Fashion = ({
         <Spinner />
       )}
 
-      <h1>Tech News</h1>
+      <h1>Fashion News</h1>
       <hr></hr>
 
       {result !== null ? (
