@@ -193,6 +193,7 @@ body {
   padding: 0 2em 2em 2em;
   justify-content: space-between;
   align-items: initial;
+  margin-bottom: 1em;
 }
 
 .carousel-slider a {
@@ -304,6 +305,10 @@ body {
   margin-top: 1em;
 }
 
+.news-card p {
+  font-weight: lighter;
+}
+
 .news-card ul {
   display: flex;
   list-style: none;
@@ -315,6 +320,10 @@ body {
   padding: 0;
 }
 
+.news-card ul li:nth-child(2) {
+  font-weight: lighter;
+}
+
 .news-card ul li {
   padding: 0 10px;
 }
@@ -324,7 +333,7 @@ body {
   color: #000;
 }
 
-@media (max-width: 900px) and (min-width: 600px) {
+@media (max-width: 996px) and (min-width: 600px) {
   .wrapper {
     grid-template-columns: 1fr 1fr;
   }

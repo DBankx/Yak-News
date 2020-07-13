@@ -32,7 +32,7 @@ const Landing = ({ weather: { weatherData, loading } }) => {
                   : 'U.S'}
               </Tab>
               <Tab selectedClassName='active'>Politics</Tab>
-              <Tab selectedClassName='active'>Busniess</Tab>
+              <Tab selectedClassName='active'>Business</Tab>
               <Tab selectedClassName='active' className='hide-sm'>
                 Health
               </Tab>

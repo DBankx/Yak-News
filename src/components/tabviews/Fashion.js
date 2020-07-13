@@ -1,14 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Carousel from './Carousel';
 import { getCarouselFashion } from '../../actions/carousel';
 import Spinner from '../layout/Spinner';
 
-const Fashion = ({ getCarouselFashion, carousel: { fashion, loading } }) => {
+import { getNews } from '../../actions/news';
+import NewsBody from './NewsBody';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
+
+const Fashion = ({
+  getCarouselFashion,
+  carousel: { fashion, loading },
+  getNews,
+  news: { result }
+}) => {
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     getCarouselFashion();
-  }, [getCarouselFashion]);
+    getNews('Fashion', page);
+  }, [getCarouselFashion, getNews, page]);
+
+  // increases the page number
+  function nextPage() {
+    setPage(page + 1);
+  }
+
+  // decreases the page number
+  function prevPage() {
+    setPage(page - 1);
+  }
 
   return (
     <div>
@@ -17,17 +42,53 @@ const Fashion = ({ getCarouselFashion, carousel: { fashion, loading } }) => {
       ) : (
         <Spinner />
       )}
+
+      <h1>Tech News</h1>
+      <hr></hr>
+
+      {result !== null ? (
+        <NewsBody articles={result && result.articles} />
+      ) : (
+        <Spinner />
+      )}
+
+      <div className='trigger-buttons'>
+        <ul>
+          <li>
+            <Zoom in={true}>
+              <Fab
+                className='btn'
+                onClick={prevPage}
+                disabled={page <= 1 ? true : null}
+              >
+                <ArrowBackIcon />
+              </Fab>
+            </Zoom>
+          </li>
+          <li>Page {page}</li>
+          <li>
+            {' '}
+            <Zoom in={true}>
+              <Fab className='btn' onClick={nextPage}>
+                <ArrowForwardIcon />
+              </Fab>
+            </Zoom>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
 
 Fashion.propTypes = {
   getCarouselFashion: PropTypes.func.isRequired,
-  fashion: PropTypes.object
+  fashion: PropTypes.object,
+  getNews: PropTypes.func.isRequired
 };
 
 const mapState = (state) => ({
-  carousel: state.carousel
+  carousel: state.carousel,
+  news: state.news
 });
 
-export default connect(mapState, { getCarouselFashion })(Fashion);
+export default connect(mapState, { getCarouselFashion, getNews })(Fashion);

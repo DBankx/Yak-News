@@ -13,4 +13,8 @@ const NewsBody = ({ articles }) => {
   );
 };
 
+NewsBody.propTypes = {
+  articles: PropTypes.array.isRequired
+};
+
 export default NewsBody;

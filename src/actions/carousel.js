@@ -56,24 +56,6 @@ export const getCarouselTech = () => async (dispatch) => {
   }
 };
 
-// export const getCarouselUs = () => async (dispatch) => {
-//   try {
-//     const res = await axios.get(
-//       `https://api.nytimes.com/svc/topstories/v2/us.json?api-key=${NEWS_API_KEY}`
-//     );
-
-//     dispatch({
-//       type: GET_CAROUSEL_US_NEWS,
-//       payload: res.data
-//     });
-//   } catch (err) {
-//     dispatch({
-//       type: CAROUSEL_ERROR,
-//       payload: 'Server Error'
-//     });
-//   }
-// };
-
 export const getCarouselPolitics = () => async (dispatch) => {
   try {
     const res = await axios.get(

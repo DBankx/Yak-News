@@ -59,7 +59,7 @@ const World = ({
               <Fab
                 className='btn'
                 onClick={prevPage}
-                disabled={page <= 1 ? 'disabled' : null}
+                disabled={page <= 1 ? true : null}
               >
                 <ArrowBackIcon />
               </Fab>

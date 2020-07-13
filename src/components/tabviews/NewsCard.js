@@ -5,13 +5,13 @@ import TodayIcon from '@material-ui/icons/Today';
 
 const NewsCard = ({ data }) => {
   return (
-    <a
-      className='news-link'
-      href={data.url}
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      <div className='news-card'>
+    <div className='news-card'>
+      <a
+        className='news-link'
+        href={data.url}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
         <div className='card-image'>
           {data.urlToImage ? (
             <img src={data.urlToImage} alt='headline thumbnail' />
@@ -25,7 +25,7 @@ const NewsCard = ({ data }) => {
           </a>
           <ul>
             <li>
-              <TodayIcon className={{ marginTop: '1em' }} />
+              <TodayIcon />
             </li>
             <li>
               <Moment fromNow>{data.publishedAt}</Moment>
@@ -36,11 +36,13 @@ const NewsCard = ({ data }) => {
             </li>
           </ul>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 
-NewsCard.propTypes = {};
+NewsCard.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export default NewsCard;
