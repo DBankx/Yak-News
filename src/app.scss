@@ -364,3 +364,15 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+// footer
+.footer-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  hr {
+    width: 90%;
+    background-color: #000;
+  }
+}
