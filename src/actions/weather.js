@@ -1,6 +1,5 @@
 import { GET_WEATHER, WEATHER_ERROR } from './actions';
 import axios from 'axios';
-import React from 'react';
 
 // get the users longitude and latitude, then get the weather from the api
 
