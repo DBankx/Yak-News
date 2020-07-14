@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_NEWS, NEWS_ERROR, GET_SUGGESTIONS } from './actions';
+import { GET_NEWS, NEWS_ERROR, GET_SUGGESTIONS, GET_SEARCH } from './actions';
 
 const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_2;
 
@@ -19,14 +19,31 @@ export const getNews = (topic, page) => async (dispatch) => {
   }
 };
 
+// get suggestions from users text
 export const getSuggestions = (topic) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `https://newsapi.org/v2/everything?q="${topic}"&page=6&pageSize=9&apiKey=${NEWS_API_KEY}`
+      `https://newsapi.org/v2/everything?q="${topic}"&page=1&pageSize=6&apiKey=${NEWS_API_KEY}`
     );
 
     dispatch({
       type: GET_SUGGESTIONS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({ type: NEWS_ERROR, payload: err.response });
+  }
+};
+
+// get articles from searched topic
+export const getSearchedNews = (topic, page, sortby) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `https://newsapi.org/v2/everything?q=${topic}&page=${page}&pageSize=12&sortBy=${sortby}&apiKey=${NEWS_API_KEY}`
+    );
+
+    dispatch({
+      type: GET_SEARCH,
       payload: res.data
     });
   } catch (err) {

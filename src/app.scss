@@ -474,3 +474,59 @@ body {
     color: #000;
   }
 }
+
+// search
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5em;
+  .form-element {
+    margin: 0 13px;
+
+    button {
+      background-color: $main-color;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($color: $main-color, $amount: 10%);
+      }
+    }
+  }
+}
+
+.search-result {
+  margin: 1em 0;
+}
+
+.result-entry ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 1em;
+
+  li:first-child {
+    padding: 0 8px 0 0;
+  }
+
+  li {
+    padding: 0 8px;
+  }
+}
+
+.result-entry a {
+  margin-top: 1em;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .search-form {
+    display: block;
+
+    .form-element {
+      margin: 1em 0;
+      text-align: center;
+    }
+  }
+}

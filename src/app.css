@@ -448,3 +448,58 @@ body {
   text-decoration: none;
   color: #000;
 }
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5em;
+}
+
+.search-form .form-element {
+  margin: 0 13px;
+}
+
+.search-form .form-element button {
+  background-color: #0e6cff;
+  color: #fff;
+}
+
+.search-form .form-element button:hover {
+  background-color: #0055da;
+}
+
+.search-result {
+  margin: 1em 0;
+}
+
+.result-entry ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 1em;
+}
+
+.result-entry ul li:first-child {
+  padding: 0 8px 0 0;
+}
+
+.result-entry ul li {
+  padding: 0 8px;
+}
+
+.result-entry a {
+  margin-top: 1em;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .search-form {
+    display: block;
+  }
+  .search-form .form-element {
+    margin: 1em 0;
+    text-align: center;
+  }
+}

@@ -78,7 +78,7 @@ const UtilityBar = ({
                   onChange={handleChange}
                 />
                 <Zoom in={true}>
-                  <Link to={`/search/${text}`}>
+                  <Link to={`/search/${text}/none`}>
                     <Fab>
                       <SearchIcon />
                     </Fab>
@@ -105,7 +105,7 @@ const UtilityBar = ({
                       </div>
                     );
                   })}
-                  <Link to={`/search/${text}`}>
+                  <Link to={`/search/${text}/none`}>
                     Click here to see all results
                   </Link>
                 </div>

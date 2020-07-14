@@ -24,3 +24,6 @@ export const NEWS_ERROR = 'NEWS_ERROR';
 
 // suggestion box
 export const GET_SUGGESTIONS = 'GET_SUGGESTIONS';
+
+// get searched news
+export const GET_SEARCH = 'GET_SEARCH';
