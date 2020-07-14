@@ -12,11 +12,13 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route eact path='/search/:topic/:sortby' component={Search} />
-        </Switch>
+        <div className='content'>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route eact path='/search/:topic/:sortby' component={Search} />
+          </Switch>
+        </div>
         <Footer />
       </Router>
     </Provider>

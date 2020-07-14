@@ -47,35 +47,36 @@ const Fashion = ({
       <hr></hr>
 
       {result !== null ? (
-        <NewsBody articles={result && result.articles} />
+        <div className='all-body'>
+          <NewsBody articles={result && result.articles} />
+          <div className='trigger-buttons'>
+            <ul>
+              <li>
+                <Zoom in={true}>
+                  <Fab
+                    className='btn'
+                    onClick={prevPage}
+                    disabled={page <= 1 ? true : null}
+                  >
+                    <ArrowBackIcon />
+                  </Fab>
+                </Zoom>
+              </li>
+              <li>Page {page}</li>
+              <li>
+                {' '}
+                <Zoom in={true}>
+                  <Fab className='btn' onClick={nextPage}>
+                    <ArrowForwardIcon />
+                  </Fab>
+                </Zoom>
+              </li>
+            </ul>
+          </div>
+        </div>
       ) : (
         <Spinner />
       )}
-
-      <div className='trigger-buttons'>
-        <ul>
-          <li>
-            <Zoom in={true}>
-              <Fab
-                className='btn'
-                onClick={prevPage}
-                disabled={page <= 1 ? true : null}
-              >
-                <ArrowBackIcon />
-              </Fab>
-            </Zoom>
-          </li>
-          <li>Page {page}</li>
-          <li>
-            {' '}
-            <Zoom in={true}>
-              <Fab className='btn' onClick={nextPage}>
-                <ArrowForwardIcon />
-              </Fab>
-            </Zoom>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };

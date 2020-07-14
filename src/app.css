@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+.content {
+  min-height: calc(100vh - 100px);
+}
+
 .navbar {
   background-color: #0e6cff;
 }
@@ -355,14 +359,22 @@ body {
   }
 }
 
+.footer {
+  height: 50px;
+}
+
 .footer-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.footer-title h3 {
+  width: 30%;
+}
+
 .footer-title hr {
-  width: 90%;
+  width: 100%;
   background-color: #000;
 }
 
@@ -405,6 +417,15 @@ body {
   text-align: center;
   font-size: 0.9em;
   margin-top: 2em;
+}
+
+@media (max-width: 996px) and (min-width: 600px) {
+  .footer-body-text {
+    display: block;
+  }
+  .footer-body-text a {
+    margin-top: 1em;
+  }
 }
 
 @media (max-width: 600px) {

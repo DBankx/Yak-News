@@ -21,6 +21,7 @@ export const CAROUSEL_ERROR = 'CAROUSEL_ERROR';
 // get the body news
 export const GET_NEWS = 'GET_NEWS';
 export const NEWS_ERROR = 'NEWS_ERROR';
+export const CLEAR_NEWS = 'CLEAR_NEWS';
 
 // suggestion box
 export const GET_SUGGESTIONS = 'GET_SUGGESTIONS';

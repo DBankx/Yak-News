@@ -2,7 +2,8 @@ import {
   GET_NEWS,
   NEWS_ERROR,
   GET_SUGGESTIONS,
-  GET_SEARCH
+  GET_SEARCH,
+  CLEAR_NEWS
 } from '../actions/actions';
 
 const initialState = {
@@ -33,6 +34,13 @@ const news = (state = initialState, action) => {
         ...state,
         loading: false,
         suggestions: payload
+      };
+    case CLEAR_NEWS:
+      return {
+        ...state,
+        result: null,
+        search: null,
+        loading: true
       };
     case GET_SEARCH:
       return {

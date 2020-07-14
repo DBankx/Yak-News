@@ -32,7 +32,7 @@ const Search = ({ match, getSearchedNews, news: { search, loading } }) => {
   //   get the news of the topic in the url
   useEffect(() => {
     getSearchedNews(match.params.topic, page, match.params.sortby);
-  }, [getSearchedNews, match, page, searchData.topic]);
+  }, [getSearchedNews, match, page]);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -75,7 +75,7 @@ const Search = ({ match, getSearchedNews, news: { search, loading } }) => {
               name='sortby'
               value={searchData.sortby}
               onChange={handleChange}
-              style={{ width: '150px' }}
+              style={{ width: '220px' }}
               label='sortby'
             >
               <MenuItem value=''>
