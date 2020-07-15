@@ -2,6 +2,10 @@
   "name": "yak-news",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.4"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -30,8 +34,8 @@
     "uuid": "^8.2.0"
   },
   "scripts": {
-    "start": "env-cmd react-scripts start",
-    "build": "env-cmd react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
