@@ -475,6 +475,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 2.5em;
+  margin-bottom: 2.5em;
 }
 
 .search-form .form-element {
@@ -515,6 +516,14 @@ body {
   font-weight: 800;
 }
 
+.homepage {
+  margin-top: 1em;
+}
+
+.homepage a {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .search-form {
     display: block;
@@ -523,4 +532,21 @@ body {
     margin: 1em 0;
     text-align: center;
   }
+}
+
+.contact-info {
+  margin-top: 2em;
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.contact-info ul li {
+  margin-bottom: 1em;
+}
+
+.contact-info ul li .contact-icon {
+  font-size: 40px;
 }

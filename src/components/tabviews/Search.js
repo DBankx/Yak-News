@@ -56,6 +56,9 @@ const Search = ({ match, getSearchedNews, news: { search, loading } }) => {
 
   return (
     <div className='container'>
+      <div className='homepage'>
+        <Link to='/'> Back to homepage</Link>
+      </div>
       <form className='search-form'>
         <div className='form-element'>
           <TextField
