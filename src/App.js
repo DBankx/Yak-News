@@ -8,6 +8,7 @@ import Landing from './components/home/Landing';
 import Footer from './components/layout/Footer';
 import Search from './components/tabviews/Search';
 import Contact from './components/home/Contact';
+import About from './components/home/About';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Landing} />
-            <Route eact path='/search/:topic/:sortby' component={Search} />
-            <Route eact path='/contact' component={Contact} />
+            <Route exact path='/search/:topic/:sortby' component={Search} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/about' component={About} />
           </Switch>
         </div>
         <Footer />

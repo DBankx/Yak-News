@@ -16,18 +16,38 @@ const Footer = (props) => {
           <div className='footer-body'>
             <ul>
               <li>
-                <FacebookIcon style={{ fontSize: '40px', color: '#3B5998' }} />
+                <a
+                  href='https://www.facebook.com/damilola.hundeyin'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FacebookIcon
+                    style={{ fontSize: '40px', color: '#3B5998' }}
+                  />
+                </a>
               </li>
               <li>
-                <TwitterIcon style={{ fontSize: '40px', color: '#00ACEE' }} />
+                <a
+                  href='https://www.twitter.com/DBankx1'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <TwitterIcon style={{ fontSize: '40px', color: '#00ACEE' }} />
+                </a>
               </li>
               <li>
-                <InstagramIcon
-                  style={{
-                    fontSize: '40px',
-                    color: 'DD2A7B'
-                  }}
-                />
+                <a
+                  href='https://www.instagram.com/Dbankx1'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <InstagramIcon
+                    style={{
+                      fontSize: '40px',
+                      color: 'DD2A7B'
+                    }}
+                  />
+                </a>
               </li>
             </ul>
             <div className='footer-body-text'>

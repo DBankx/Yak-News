@@ -570,9 +570,19 @@ body {
   list-style: none;
   margin-top: 1em;
   li {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     .contact-icon {
       font-size: 40px;
     }
+  }
+}
+
+.about-block {
+  margin-top: 2em;
+
+  img {
+    margin-top: 1em;
+    width: 100px;
+    margin-right: 2em;
   }
 }
